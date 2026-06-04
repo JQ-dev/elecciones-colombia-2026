@@ -50,12 +50,10 @@ def interp(c_brand, steps, target=(252, 248, 244)):
 CEPEDA = (140, 55, 140)
 ADLE = (206, 116, 42)
 
-BINS = [(-100, -80), (-80, -70), (-70, -60), (-60, -50), (-50, -40),
-        (-40, -30), (-30, -20), (-20, -10), (-10, 0),
-        (0, 10), (10, 20), (20, 30), (30, 40),
-        (40, 50), (50, 60), (60, 70), (70, 80), (80, 101)]
+BINS = [(-101, -75), (-75, -50), (-50, -25), (-25, 0),
+        (   0,  25), ( 25,  50), ( 50,  75), (75, 101)]
 
-COLORS = interp(CEPEDA, 9) + list(reversed(interp(ADLE, 9)))
+COLORS = interp(CEPEDA, 4) + list(reversed(interp(ADLE, 4)))
 
 
 def bin_color(margin_pct):
@@ -216,10 +214,10 @@ def main():
     for (lo, hi), col in zip(BINS, COLORS):
         legend_patches.append(mpatches.Patch(facecolor=col, edgecolor="#999",
                                              linewidth=0.3))
-        if lo == -100:
-            lbl = "< −80"
+        if lo == -101:
+            lbl = "< −75"
         elif hi == 101:
-            lbl = "> +80"
+            lbl = "> +75"
         else:
             lbl = f"{lo:+d} a {hi:+d}"
         legend_labels.append(lbl)
