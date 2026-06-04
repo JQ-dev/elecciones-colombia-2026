@@ -47,7 +47,7 @@ def interp(c_brand, steps, target=(252, 248, 244)):
     return out
 
 
-CEPEDA = (140, 55, 140)
+CEPEDA = (192, 61, 204)   # morado vivo
 ADLE = (206, 116, 42)
 
 BINS = [(-101, -75), (-75, -50), (-50, -25), (-25, 0),
