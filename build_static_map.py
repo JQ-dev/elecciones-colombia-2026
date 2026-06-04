@@ -36,10 +36,12 @@ def fix_mojibake(s: str) -> str:
         return s
 
 
-def interp(c_brand, steps, target=(252, 248, 244)):
+def interp(c_brand, steps, target=(255, 255, 255), t_max=0.72):
+    """Lightest bucket stays a clear tint of the brand (not near-white)
+    so the two buckets adjacent to 0 are visually distinct."""
     out = []
     for k in range(steps):
-        t = k / (steps - 1)
+        t = (k / (steps - 1)) * t_max
         r = round(c_brand[0] + (target[0] - c_brand[0]) * t)
         g = round(c_brand[1] + (target[1] - c_brand[1]) * t)
         b = round(c_brand[2] + (target[2] - c_brand[2]) * t)
@@ -47,7 +49,7 @@ def interp(c_brand, steps, target=(252, 248, 244)):
     return out
 
 
-CEPEDA = (192, 61, 204)   # morado vivo
+CEPEDA = (133, 61, 204)   # morado vivo (less pink, more violet)
 ADLE = (206, 116, 42)
 
 BINS = [(-101, -75), (-75, -50), (-50, -25), (-25, 0),

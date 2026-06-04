@@ -9,7 +9,7 @@ Mapas a nivel municipal de los resultados oficiales de la elección presidencial
 Cubre los 1,189 municipios del país. Cada uno coloreado según el margen entre Abelardo de la Espriella y Iván Cepeda sobre votos válidos, en bins de 10 puntos porcentuales. Las 32 capitales departamentales están marcadas.
 
 - **Naranja** (`rgb(206, 116, 42)`): gana ADLE
-- **Morado** (`rgb(192, 61, 204)`): gana Cepeda
+- **Morado** (`rgb(133, 61, 204)`): gana Cepeda
 - Tonos más oscuros = margen mayor
 
 Hover sobre cualquier municipio para ver censo electoral, votantes, votos por candidato y participación.
